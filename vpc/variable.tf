@@ -5,5 +5,5 @@ variable "cidr_block" {
 
 variable "tags" {
   type = string
-  default = "pratik-vpc"
+  default = "Pratham-vpc"
 }

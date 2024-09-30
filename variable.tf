@@ -5,7 +5,7 @@ variable "cidr_block" {
 
 variable "tags" {
   type    = string
-  default = "pratik-vpc"
+  default = "Pratham-vpc"
 }
 
 
@@ -99,7 +99,7 @@ variable "aws_SG_private" {
 
 variable "AMI_ID" {
   type    = string
-  default = "ami-0522ab6e1ddcc7055"
+  default = "ami-0e86e20dae9224db8"
 }
 
 variable "instance_type" {
@@ -109,7 +109,7 @@ variable "instance_type" {
 
 variable "key_name" {
   type    = string
-  default = "rana"
+  default = "MOM"
 }
 
 variable "instance_name_public" {
@@ -132,7 +132,7 @@ variable "instance03_name_private" {
 
 variable "tool-name" {
   type = string
-  default = "Prometheous"
+  default = "test"
 }
 
 # TG attachement 
@@ -145,7 +145,7 @@ variable "port-num" {
 # ALB
 variable "ALB-Name" {
   type = string
-  default = "promethous-ALB"
+  default = "Docker-ALB"
 }
 
 variable "ALB-type" {
@@ -156,13 +156,13 @@ variable "ALB-type" {
 # VPC perring
 variable "region_name" {
   type = string
-  default = "ap-south-1"
+  default = "us-east-1"
   
 }
 
 variable "vpc_peering_name" {
   type = string
-  default = "promethous_peering"
+  default = "Docker_peering"
 }
 
 variable "tool_vpc_cidr_range" {

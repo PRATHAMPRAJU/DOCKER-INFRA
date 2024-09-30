@@ -3,13 +3,13 @@ variable "vpc_id" {
 }
 variable "region_name" {
   type = string
-  default = "ap-south-1"
+  default = "us-east-1"
   
 }
 
 variable "vpc_peering_name" {
   type = string
-  default = "promethous_peering"
+  default = "Docker_peering"
 }
 
 variable "tool_vpc_cidr_range" {

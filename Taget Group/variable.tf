@@ -1,6 +1,6 @@
 variable "tool-name" {
   type = string
-  default = "Prometheous"
+  default = "Docker"
 }
 
 variable "aws_vpc_id" {

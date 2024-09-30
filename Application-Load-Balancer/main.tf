@@ -1,5 +1,5 @@
 # Application Load Balancer
-resource "aws_lb" "Promethous-alb" {
+resource "aws_lb" "Docker-alb" {
   name               = var.ALB-Name
   internal           = false
   load_balancer_type = var.ALB-type

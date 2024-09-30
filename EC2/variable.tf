@@ -1,6 +1,6 @@
 variable "AMI_ID" {
   type    = string
-  default = "ami-0522ab6e1ddcc7055"
+  default = "ami-0e86e20dae9224db8"
 }
 
 variable "instance_type" {
@@ -10,7 +10,7 @@ variable "instance_type" {
 
 variable "key_name" {
   type    = string
-  default = "rana"
+  default = "MOM"
 }
 
 variable "instance_name_public" {

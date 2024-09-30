@@ -1,6 +1,6 @@
 variable "ALB-Name" {
   type = string
-  default = "promethous-ALB"
+  default = "Docker-ALB"
 }
 
 variable "ALB-type" {
