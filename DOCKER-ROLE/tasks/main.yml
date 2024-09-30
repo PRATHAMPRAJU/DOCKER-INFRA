@@ -1,0 +1,49 @@
+---
+# tasks file for Docker
+#
+# tasks/main.yml
+
+- name: Add Docker GPG key (Debian)
+  apt_key:
+    url: "{{ docker_gpg_key }}"
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Add Docker repository (Debian)
+  apt_repository:
+    repo: "{{ docker_repo }}"
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Install Docker (Debian)
+  apt:
+    update_cache: true
+    name: docker-ce
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Add Docker YUM repository (RedHat)
+  yum_repository:
+    name: docker-ce
+    baseurl: "{{ docker_baseurl }}"
+    repo_gpgcheck: yes
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: "{{ docker_gpg_key }}"
+    sslverify: yes
+    sslcacert: /etc/pki/tls/certs/ca-bundle.crt
+  when: ansible_os_family == "RedHat"
+
+- name: Install Docker (RedHat)
+  yum:
+    name: docker-ce
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Generate Docker daemon.json
+  template:
+    src: docker-daemon.json.j2
+    dest: /etc/docker/daemon.json
+  notify: restart docker
+  when: ansible_os_family in ["Debian", "RedHat"]
+

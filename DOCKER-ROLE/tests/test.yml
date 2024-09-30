@@ -1,0 +1,6 @@
+---
+- hosts: web
+  become: true
+  roles:
+    - /home/pratham/Docker_role/DOCKER-ROLE
+
