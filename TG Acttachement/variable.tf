@@ -1,6 +1,6 @@
 variable "port-num" {
   type = string
-  default = "9090"
+  default = "80"
 }
 
 variable "TG-arn" {
