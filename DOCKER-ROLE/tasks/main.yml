@@ -1,7 +1,7 @@
 ---
 # tasks file for Docker
 #
-# tasks/main.yml
+# Install Docker based on OS family and create an Nginx container.
 
 - name: Add Docker GPG key (Debian)
   apt_key:
@@ -47,3 +47,25 @@
   notify: restart docker
   when: ansible_os_family in ["Debian", "RedHat"]
 
+# Ensure Docker is started and enabled
+- name: Ensure Docker service is started and enabled
+  service:
+    name: docker
+    state: started
+    enabled: yes
+  when: ansible_os_family in ["Debian", "RedHat"]
+
+# Create and start an Nginx container using Docker
+- name: Create and start an Nginx container
+  docker_container:
+    name: nginx_container
+    image: nginx:latest
+    state: started  # Ensure the container is in the running state
+    restart_policy: always  # Ensure the container restarts if it crashes
+    ports:
+      - "80:80"
+    log_driver: "json-file"
+    log_options:
+      max-size: "10m"
+      max-file: "3"
+  when: ansible_os_family in ["Debian", "RedHat"]
