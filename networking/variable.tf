@@ -186,7 +186,7 @@ variable "protocol_01" {
   default = "-1"
 }
 
-variable "grafana_port" {
+variable "docker_port" {
   type = string
   default = "2000"
 }
@@ -206,15 +206,6 @@ variable "sg_cidr_range" {
   default = "0.0.0.0/0"
 }
 
-variable "prometheus_port" {
-  type = string
-  default = "9090"
-}
-
-variable "exporter_port" {
-  type = string
-  default = "9100"
-}
 
 # vpc peering variables
 
