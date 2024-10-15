@@ -125,7 +125,7 @@ variable "ALB_type" {
 
 variable "alb_name" {
   type = string
-  default = "Grafana-alb"
+  default = "Docker-alb"
 }
 
 variable "internal_value" {
